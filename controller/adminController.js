@@ -266,7 +266,7 @@ const DeletePlayerFunction = async (req, res) => {
 
 // Controller untuk melakukan logout
 const Logout = (req, res) => {
-	req.logOut();
+	req.logout();
 	res.redirect("/admin/login");
 };
 

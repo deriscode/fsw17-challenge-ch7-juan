@@ -47,24 +47,13 @@ router.post("/admin/delete/:id", checkAdminAuthenticated, DeletePlayerFunction);
 router.post(
 	"/admin/login",
 	checkAdminNotAuthenticated,
-	passport.authenticate("local", { failureRedirect: "/admin/login", failureFlash: true }),
+	passport.authenticate("admin", { failureRedirect: "/admin/login", failureFlash: true }),
 	(req, res) => {
-		if (req.user.role === "ADMIN") {
-			res.redirect(`/admin/dashboard`);
-		} else {
-			req.flash("error", "Akses Untuk Login Hanya Oleh Admin");
-			const { success, error } = req.flash();
-
-			res.render("adminLogin", {
-				headTitle: "Admin Login",
-				success,
-				error,
-			});
-		}
+		res.redirect(`/admin/dashboard`);
 	}
 );
 
 // Melakukan Logout (AUTENTIKASI KELUAR)
-router.post("/admin/logout", Logout);
+router.get("/admin/logout", Logout);
 
 module.exports = router;

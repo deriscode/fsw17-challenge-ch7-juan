@@ -6,10 +6,36 @@ const { User } = require("../models");
 
 const initializePassport = (passport) => {
 	// Fungsi untuk mendefinisikan cara login
-	const authenticateUser = (email, password, done) => {
+	const authenticatePlayer = (email, password, done) => {
 		User.findOne({
 			where: {
 				email: email,
+				role: "PLAYER",
+			},
+		})
+			.then((userData) => {
+				if (userData) {
+					bcrypt.compare(password, userData.password, (error, isMatch) => {
+						if (isMatch) {
+							return done(null, userData);
+						} else {
+							return done(null, false, { message: "Password Salah" });
+						}
+					});
+				} else {
+					return done(null, false, { message: "Email Tidak Terdaftar" });
+				}
+			})
+			.catch((error) => {
+				return done(error);
+			});
+	};
+
+	const authenticateAdmin = (email, password, done) => {
+		User.findOne({
+			where: {
+				email: email,
+				role: "ADMIN",
 			},
 		})
 			.then((userData) => {
@@ -31,12 +57,24 @@ const initializePassport = (passport) => {
 	};
 
 	passport.use(
+		"player",
 		new LocalStrategy(
 			{
 				usernameField: "email",
 				passwordField: "password",
 			},
-			authenticateUser
+			authenticatePlayer
+		)
+	);
+
+	passport.use(
+		"admin",
+		new LocalStrategy(
+			{
+				usernameField: "email",
+				passwordField: "password",
+			},
+			authenticateAdmin
 		)
 	);
 

@@ -39,24 +39,13 @@ router.post("/delete/:id", checkPlayerAuthenticated, DeletePlayerFunction);
 router.post(
 	"/login",
 	checkPlayerNotAuthenticated,
-	passport.authenticate("local", { failureRedirect: "/login", failureFlash: true }),
+	passport.authenticate("player", { failureRedirect: "/login", failureFlash: true }),
 	(req, res) => {
-		if (req.user.role === "PLAYER") {
-			res.redirect(`/profile/${req.user.uuid}`);
-		} else {
-			req.flash("error", "Anda Tidak Memiliki Akses Untuk Login");
-			const { success, error } = req.flash();
-
-			res.render("login", {
-				headTitle: "Login",
-				success,
-				error,
-			});
-		}
+		res.redirect(`/profile/${req.user.uuid}`);
 	}
 );
 
 // Melakukan Logout (AUTENTIKASI KELUAR)
-router.post("/logout", Logout);
+router.get("/logout", Logout);
 
 module.exports = router;
