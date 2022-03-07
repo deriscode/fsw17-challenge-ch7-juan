@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<%- include("partial/head") %>
+	</head>
+
+	<body>
+		<!-- Start Header -->
+		<header class="header">
+			<!-- Start Navbar -->
+			<%- include("partial/navbar") %>
+			<!-- End Navbar -->
+
+			<!-- Start Header Title -->
+			<section class="header__title container">
+				<div class="row text-center">
+					<div class="col-12 text-white">
+						<% if (success) { %> <%- include('./partial/successMessage', {message: success[0]}) %> <% } else if (error) { %> <%-
+						include('./partial/errorMessage', {message: error[0]}) %> <% } %>
+
+						<h1 class="fw-bold">PLAY TRADITIONAL GAME</h1>
+						<h3>Experience new traditional game play</h3>
+						<a href="/login" class="btn fw-bold" target="_blank">PLAY NOW</a>
+						<div class="header__title-story-btn">
+							<a href="#" class="fw-bold text-white">
+								THE STORY<br />
+								<img src="/assets/scroll-down.svg" alt="Scroll Down" class="img-fluid" />
+							</a>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- End Header Title -->
+		</header>
+		<!-- End Header -->
+
+		<!-- Start Gallery -->
+		<section id="gallery" class="gallery">
+			<div class="container">
+				<div class="row">
+					<div class="col-12 col-lg-4 gallery__text text-white">
+						<h3>What's so special?</h3>
+						<h1>THE GAMES</h1>
+					</div>
+					<div class="col-12 col-lg-8 gallery__carousel slick-custom">
+						<div>
+							<img src="/assets/rockpaperstrategy-1600.jpg" alt="Slide 1" class="img-fluid" />
+						</div>
+						<div>
+							<img src="/assets/rockpaperstrategy-1600.jpg" alt="Slide 2" class="img-fluid" />
+						</div>
+						<div>
+							<img src="/assets/rockpaperstrategy-1600.jpg" alt="Slide 3" class="img-fluid" />
+						</div>
+						<div>
+							<img src="/assets/rockpaperstrategy-1600.jpg" alt="Slide 4" class="img-fluid" />
+						</div>
+						<div>
+							<img src="/assets/rockpaperstrategy-1600.jpg" alt="Slide 5" class="img-fluid" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- End Gallery -->
+
+		<!-- Start Features -->
+		<section id="features" class="features">
+			<div class="container">
+				<div class="row justify-content-end">
+					<div class="col-12 col-lg-5 features__text">
+						<h3>What's so special?</h3>
+						<h1>FEATURES</h1>
+						<div class="row justify-content-md-center justify-content-lg-start">
+							<div class="col-12 col-md-9">
+								<ul class="features__timeline">
+									<li>
+										<p>TRADITIONAL GAMES</p>
+										<p>if you miss your childhood, we provide many traditional games here</p>
+									</li>
+									<li>
+										<p>GAME SUIT</p>
+									</li>
+									<li>
+										<p>TBD</p>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- End Features -->
+
+		<!-- Start System -->
+		<section id="system" class="system">
+			<div class="container">
+				<div class="row">
+					<div class="col-12 text-center">
+						<h3 class="text-white">Can My computer Run this game?</h3>
+					</div>
+				</div>
+				<div class="row justify-content-md-center justify-content-lg-start">
+					<div class="col-12 col-md-6 col-lg-6">
+						<h1 class="text-white">SYSTEM REQUIREMENTS</h1>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-12 col-lg-6">
+						<table class="table table-bordered">
+							<tbody>
+								<tr>
+									<td class="col-6 col-md-6 col-lg-6">
+										<div class="system__table-txt">
+											<p>OS:</p>
+											<p>Windows 7 64-bit only<br />(No OSX support at this time)</p>
+										</div>
+									</td>
+									<td class="col-6 col-md-6 col-lg-6">
+										<div class="system__table-txt">
+											<p>PROCESSOR:</p>
+											<p>Intel Core 2 Duo @ 2.4 GHZ or<br />AMD Athlon X2 @ 2.8 GHZ</p>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="col-6 col-md-6 col-lg-6">
+										<div class="system__table-txt">
+											<p>mEMORY:</p>
+											<p>4 GB RAM</p>
+										</div>
+									</td>
+									<td class="col-6 col-md-6 col-lg-6">
+										<div class="system__table-txt">
+											<p>storage:</p>
+											<p>8 GB available</p>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td colspan="2">
+										<div class="system__table-txt">
+											<p>GRAPHICS:</p>
+											<p>NVIDIA GeForce GTX 660 2GB or<br />AMD Radeon HD 7850 2GB DirectX11 (Shader Model S)</p>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- End System -->
+
+		<!-- Start Top-Scores -->
+		<section id="top-scores" class="top-scores">
+			<div class="container">
+				<div class="row">
+					<!-- Start Top Scores Heading -->
+					<div class="col-12 col-md-5 col-lg-5">
+						<div class="top-scores__heading text-white">
+							<h1>TOP SCORES</h1>
+							<p>This top score from various games provided on this platform</p>
+							<button type="button" class="btn fw-bold">see more</button>
+						</div>
+					</div>
+					<!-- End Top Scores Heading -->
+
+					<!-- Start Top Scores Review -->
+					<div class="col-12 col-md-7 col-lg-7">
+						<div class="row justify-content-center">
+							<!-- Start Reviewer 1 -->
+							<div class="col-11 col-lg-9 offset-lg-3 top-scores__review">
+								<div class="row">
+									<div class="col-12 col-md-3 col-lg-2">
+										<img src="/assets/reviewer-01.jpg" alt="Reviewer Evan Lahti" class="img-fluid rounded-circle top-scores__review-img" />
+									</div>
+									<div class="col-12 col-md-7 col-lg-8 top-scores__profile">
+										<p class="mb-0 pt-2">Evan Lahti</p>
+										<p class="mb-0 pb-2">PC Gamer</p>
+									</div>
+									<div class="col-12 col-md-2 col-lg-2 align-self-center">
+										<i class="fab fa-twitter top-scores__profile-socmed"></i>
+									</div>
+									<div class="col-12 top-scores__quote mt-4">
+										<p>"One of my gaming highlights of the year."</p>
+										<p>June 18, 2021</p>
+									</div>
+								</div>
+							</div>
+							<!-- End Reviewer 1-->
+
+							<!-- Start Reviewer 2 -->
+							<div class="col-11 col-lg-9 top-scores__review">
+								<div class="row">
+									<div class="col-12 col-md-3 col-lg-2">
+										<img
+											src="/assets/reviewer-02.jpg"
+											alt="Reviewer Jada Griffin"
+											class="img-fluid rounded-circle top-scores__review-img"
+										/>
+									</div>
+									<div class="col-12 col-md-7 col-lg-8 top-scores__profile">
+										<p class="mb-0 pt-2">Jada Griffin</p>
+										<p class="mb-0 pb-2">Nerdreactor</p>
+									</div>
+									<div class="col-12 col-md-2 col-lg-2 align-self-center">
+										<i class="fab fa-twitter top-scores__profile-socmed"></i>
+									</div>
+									<div class="col-12 top-scores__quote mt-4">
+										<p>"The next big thing in the world of streaming and survival games."</p>
+										<p>July 10, 2021</p>
+									</div>
+								</div>
+							</div>
+							<!-- End Reviewer 2 -->
+
+							<!-- Start Reviewer 3 -->
+							<div class="col-11 col-lg-9 offset-lg-2 top-scores__review">
+								<div class="row">
+									<div class="col-12 col-md-3 col-lg-2">
+										<img
+											src="/assets/reviewer-03.jpg"
+											alt="Reviewer Aaron Williams"
+											class="img-fluid rounded-circle top-scores__review-img"
+										/>
+									</div>
+									<div class="col-12 col-md-7 col-lg-8 top-scores__profile">
+										<p class="mb-0 pt-2">Aaron Williams</p>
+										<p class="mb-0 pb-2 pe-2 pe-md-0">Uproxx</p>
+									</div>
+									<div class="col-12 col-md-2 col-lg-2 align-self-center">
+										<i class="fab fa-twitter top-scores__profile-socmed"></i>
+									</div>
+									<div class="col-12 top-scores__quote mt-4">
+										<p>"Snoop Dogg Playing The Wildly Entertaining 'SOS' Is Ridiculous."</p>
+										<p>December 24, 2018</p>
+									</div>
+								</div>
+							</div>
+							<!-- End Reviewer 3 -->
+						</div>
+					</div>
+					<!-- End Top Scores Review -->
+				</div>
+			</div>
+		</section>
+		<!-- End Top-Scores -->
+
+		<!-- Start Newsletter -->
+		<section id="newsletter" class="newsletter">
+			<div class="container">
+				<div class="row justify-content-md-end">
+					<div class="col-12 col-md-6 col-lg-6 offset-lg-6 text-white">
+						<h3>Want to stay in touch?</h3>
+						<h1>NEWSLETTER SUBSCRIBE</h1>
+						<p>
+							In order to start receiving our news, all you have to do is enter your email address. Everything else will be taken care of by
+							us. We will send you emails containing information about game. We don't spam.
+						</p>
+						<form class="row mt-4">
+							<div class="col-12 col-md-12 col-lg-7 newsletter__user-email mt-4">
+								<label for="inputEmail" class="form-label">Your email address</label>
+								<input type="email" class="form-control" id="inputEmail" placeholder="youremail@binar.co.id" />
+							</div>
+							<div class="col-12 col-md-7 col-lg-5 align-self-lg-center mt-4">
+								<button type="submit" class="btn fw-bold">Subscribe now</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- End Newsletter -->
+
+		<!-- Start Footer -->
+		<%- include("partial/footer") %>
+		<!-- End Footer -->
+	</body>
+</html>

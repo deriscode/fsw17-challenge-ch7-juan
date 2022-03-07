@@ -1,0 +1,172 @@
+/* Import Font Open Sans */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+
+body {
+	background: rgb(234, 207, 91);
+	background: radial-gradient(circle, rgba(234, 207, 91, 1) 0%, rgba(247, 185, 79, 1) 100%);
+	font-family: "Open Sans", sans-serif;
+}
+
+a {
+	text-decoration: none;
+}
+
+/* Start Login-Container */
+
+.login-container {
+	height: 100vh;
+	padding: 3rem 1rem;
+}
+
+/* End Login-Container */
+
+/* Start Regist-Container */
+
+.regist-container {
+	height: 100vh;
+	display: grid;
+	grid-template-columns: 1fr;
+}
+
+.regist-container .row {
+	align-self: center;
+}
+
+/* End Regist-Container */
+
+/* Start Regist & Profile Container */
+
+.regist-container h1,
+.profile-container h1 {
+	color: #632652;
+}
+
+/* End Regist & Profile Container */
+
+/* Start Players Form */
+
+.players-form input.form-control {
+	color: #632652;
+	font-weight: bold;
+	border: 1px solid #632652 !important;
+	border-radius: 5px;
+}
+
+.players-form .form-control:focus {
+	border-color: #632652 !important;
+	box-shadow: 0.3rem 0.3rem 0 0.1rem rgb(99, 38, 82, 25%) !important;
+	color: #632652;
+	font-weight: bold;
+}
+
+.form-floating label {
+	color: #632652;
+	font-weight: bold;
+}
+
+.btn-confirm {
+	position: relative;
+	border: 2px solid #632652;
+	background-color: #ffab76;
+	border-radius: 3px;
+	padding: 1rem 2.2rem;
+	font-weight: bold;
+	color: #fff;
+	box-shadow: 0 0 0 0.1rem rgb(99, 38, 82, 25%) !important;
+	transition: all 0.5s ease-in-out;
+}
+
+.btn-confirm::after {
+	content: "";
+	position: absolute;
+}
+
+.btn-confirm:hover {
+	box-shadow: 0.3rem 0.3rem 0 0.1rem rgb(99, 38, 82, 25%) !important;
+	transform: translateX(-0.55rem);
+}
+
+.btn-back {
+	position: relative;
+	display: inline-block;
+	border: 2px solid #632652;
+	background-color: #ffeead;
+	border-radius: 3px;
+	padding: 1rem 2.2rem;
+	color: #632652;
+	font-weight: bold;
+	width: 100%;
+	box-shadow: 0 0 0 0.1rem rgb(99, 38, 82, 25%) !important;
+	transition: all 0.5s ease-in-out;
+}
+
+.btn-back::after {
+	content: "";
+	position: absolute;
+}
+
+.btn-back:hover {
+	box-shadow: -0.3rem 0.3rem 0 0.1rem rgb(99, 38, 82, 25%) !important;
+	transform: translateX(0.55rem);
+}
+
+.sign-loginregist {
+	color: #632652;
+}
+
+.sign-loginregist a {
+	color: #548cff;
+}
+
+.sign-loginregist a:hover {
+	color: #7900ff;
+}
+
+/* Start Profile Page */
+
+.profile__delete-btn {
+	display: flex;
+	justify-content: center;
+}
+
+.profile__delete-btn button {
+	background: none;
+	border: none;
+	text-decoration: underline;
+	color: #632652;
+	font-weight: bold;
+}
+
+.profile__delete-btn button:hover {
+	color: #7900ff;
+}
+
+/* End Profile Page */
+
+/* Alert for Login Validation */
+.alert-message {
+	color: #fc0a5f;
+	padding: 0.2rem;
+}
+
+/* Alert for Successfully Registered */
+.success-message small {
+	color: #005f28;
+	padding: 0.2rem;
+}
+
+/* End Players Form */
+
+/* Start Footer */
+
+.loginregistprofile-footer {
+	font-size: 0.75rem;
+	margin-top: 3.5em;
+	padding: 1em;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #632652;
+}
+
+/* End Footer */

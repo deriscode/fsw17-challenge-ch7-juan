@@ -1,0 +1,27 @@
+{
+	"name": "fsw17-challenge-ch7-juan",
+	"version": "1.0.0",
+	"description": "Binar FSW-17 Challenge Chapter 7 - Juan",
+	"main": "server.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "nodemon server.js"
+	},
+	"author": "Juan (deriscode)",
+	"license": "ISC",
+	"dependencies": {
+		"bcrypt": "^5.0.1",
+		"connect-flash": "^0.1.1",
+		"dotenv": "^16.0.0",
+		"ejs": "^3.1.6",
+		"express": "^4.17.3",
+		"express-session": "^1.17.2",
+		"express-session-sequelize": "^2.3.0",
+		"jsonwebtoken": "^8.5.1",
+		"passport": "^0.5.2",
+		"passport-local": "^1.0.0",
+		"pg": "^8.7.3",
+		"pg-hstore": "^2.3.4",
+		"sequelize": "^6.17.0"
+	}
+}

@@ -1,0 +1,117 @@
+<% if (headTitle === "Home") { %>
+<footer class="footer">
+	<div class="container">
+		<div class="row justify-content-md-around">
+			<div class="col-5 col-md-4 col-lg-8 offset-lg-1">
+				<ul class="nav flex-column flex-lg-row">
+					<li class="nav-item">
+						<a class="nav-link fw-bold footer__link" aria-current="page" href="#">MAIN</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link fw-bold footer__link" href="#gallery">ABOUT</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link fw-bold footer__link" href="#features">GAME FEATURES</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link fw-bold footer__link" href="#system">SYSTEM REQUIREMENTS</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link fw-bold footer__link" href="#top-scores">QUOTES</a>
+					</li>
+				</ul>
+			</div>
+			<div class="col-7 col-md-5 col-lg-3">
+				<ul class="nav">
+					<li class="nav-item">
+						<a class="nav-link footer__socmed" href="#"><i class="fab fa-facebook-f footer__icon"></i></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link footer__socmed" href="#"><i class="fab fa-twitter footer__icon"></i></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link footer__socmed" href="#"><i class="fab fa-youtube footer__icon"></i></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link footer__socmed" href="#"><i class="fab fa-twitch footer__icon"></i></a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<hr />
+		<div class="row">
+			<div class="col-12 col-md-5 col-lg-5 offset-lg-1 mt-3">
+				<p>&copy; 2022 JD Games, Inc. All Rights Reserved</p>
+			</div>
+			<div class="col-12 col-md-7 col-lg-6 mt-3">
+				<ul class="nav">
+					<li class="nav-item footer__policy">
+						<a class="nav-link p-0 fw-bold" href="#">PRIVACY POLICY</a>
+					</li>
+					<li class="nav-item footer__policy">
+						<a class="nav-link p-0 fw-bold" href="#">TERMS OF SERVICES</a>
+					</li>
+					<li class="nav-item footer__policy">
+						<a class="nav-link p-0 fw-bold" href="#">CODE OF CONDUCT</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</footer>
+<% } else { %>
+<footer class="loginregistprofile-footer">
+	<p class="mb-0">&copy; 2022 JD Games, Inc. All Rights Reserved</p>
+</footer>
+<% } %>
+
+<!-- Bootstrap@5.1.3 Javascript Bundle with Popper -->
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+	crossorigin="anonymous"
+></script>
+
+<!-- Slick Carousel@1.8.1 Javascript -->
+<% if (headTitle === "Home") { %>
+<script type="text/javascript" src="/slick-jquery-plugin/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="/slick-jquery-plugin/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="/slick-jquery-plugin/slick.min.js"></script>
+<script>
+	$(".slick-custom").slick({
+		dots: true,
+		infinite: true,
+		speed: 1000,
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		autoplay: true,
+		autoplaySpeed: 4000,
+		responsive: [
+			{
+				breakpoint: 991,
+				settings: {
+					slidesToShow: 1,
+					slidesToScroll: 1,
+					arrows: false,
+				},
+			},
+			{
+				breakpoint: 600,
+				settings: {
+					slidesToShow: 1,
+					slidesToScroll: 1,
+					arrows: false,
+				},
+			},
+			{
+				breakpoint: 480,
+				settings: {
+					slidesToShow: 1,
+					slidesToScroll: 1,
+					arrows: false,
+				},
+			},
+		],
+	});
+</script>
+<% } %>

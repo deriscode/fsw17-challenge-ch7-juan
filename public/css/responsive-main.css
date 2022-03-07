@@ -1,0 +1,369 @@
+/* Resolusi Handphone ketika browser chrome diresize */
+@media (min-width: 499.98px) {
+	/* Start Features */
+
+	.features__timeline:before {
+		height: 61%;
+	} /* Membuat & memberi panjang garis putih */
+
+	/* End Features */
+
+	/* Start Footer */
+
+	.footer .footer__policy:nth-child(3) {
+		padding: 0 0 0 0.5rem !important;
+	}
+
+	/* End Footer */
+}
+
+/* Resolusi Tablet */
+@media (min-width: 767.98px) {
+	/* Start Features */
+
+	.features__timeline:before {
+		height: 61.2%;
+	} /* Membuat & memberi panjang garis putih */
+
+	/* End Features */
+
+	/* Start System */
+
+	.system {
+		background-position: 60%;
+	}
+
+	.system h1 {
+		padding-right: 0;
+	}
+
+	/* End System */
+
+	/* Start Top Scores */
+	.top-scores__heading {
+		padding-top: 7.254rem;
+	}
+
+	.top-scores__review {
+		text-align: left;
+	}
+	/* End Top Scores */
+
+	/* Start Newsletter */
+
+	.newsletter {
+		background-position: -19%;
+	}
+
+	.newsletter__user-email label {
+		opacity: 0.5;
+		text-shadow: none;
+	}
+
+	::placeholder {
+		/* Chrome, Firefox, Opera, Safari 10.1+ */
+		color: #ffb548 !important;
+		opacity: 1; /* Firefox */
+		text-shadow: none;
+	}
+
+	:-ms-input-placeholder {
+		/* Internet Explorer 10-11 */
+		color: #ffb548 !important;
+		text-shadow: none;
+	}
+
+	::-ms-input-placeholder {
+		/* Microsoft Edge */
+		color: #ffb548 !important;
+		text-shadow: none;
+	}
+
+	/* End Newsletter */
+
+	/* Start Footer */
+
+	.footer p {
+		padding-left: 28px;
+	}
+
+	.footer .nav-item a {
+		font-size: 9px;
+	}
+
+	.footer .footer__policy:nth-child(1) {
+		padding-right: 0.5rem !important;
+	}
+
+	.footer .footer__policy:nth-child(2) {
+		padding: 0 0.5rem !important;
+	}
+
+	/* End Footer */
+}
+
+/* Resolusi Laptop Kecil */
+@media (min-width: 991.98px) {
+	/* Start Navbar */
+
+	.navbar-brand {
+		font-size: 24px;
+	}
+
+	.nav-link {
+		font-size: 12px;
+	}
+
+	/* End Navbar */
+
+	/* Start Header Title */
+
+	.header__title h1 {
+		font-size: 72px;
+	}
+
+	.header__title h3 {
+		font-size: 24px;
+		margin: 57px 0;
+	}
+
+	/* End Header Title */
+
+	/* Start Gallery */
+	.gallery__text {
+		margin-top: 254.81px;
+		text-align: left;
+	}
+
+	.gallery__text h3 {
+		font-size: 24px;
+	}
+
+	.gallery__text h1 {
+		font-size: 56px;
+	}
+
+	.gallery__carousel {
+		margin: 292px 0;
+	}
+	/* End Gallery */
+
+	/* Start Features */
+	.features {
+		background-position: 40%;
+		padding: 205.09px 0;
+	}
+
+	.features__text {
+		text-align: left;
+	}
+
+	.features__text h3 {
+		font-size: 24px;
+		margin-top: 70.09px;
+	}
+
+	.features__text h1 {
+		font-size: 56px;
+		margin-bottom: 70.75px;
+	}
+
+	.features__timeline {
+		margin-left: -20px;
+	} /* Permulaan membuat sebuah timeline */
+
+	.features__timeline:before {
+		height: 69.5%;
+	} /* Membuat & memberi panjang garis putih */
+
+	.features__timeline li p:nth-child(1) {
+		font-size: 24px;
+	} /* Mengatur tulisan paragraf pertama dari induk li dalam .features__timeline */
+
+	.features__timeline li p:nth-child(2) {
+		font-size: 18px;
+	} /* Mengatur tulisan paragraf kedua dari induk li dalam .features__timeline */
+
+	/* End Features */
+
+	/* Start System */
+
+	.system {
+		background-position: 90%;
+	}
+
+	.system h1 {
+		margin-top: 110.29px;
+		font-size: 56px;
+		line-height: 64px;
+	}
+
+	.system table {
+		width: 140%;
+	}
+
+	.system__table-txt p:first-child {
+		font-size: 24px;
+		line-height: 28px;
+		letter-spacing: 2px;
+	}
+
+	.system__table-txt p:last-child {
+		font-size: 18px;
+		line-height: 22px;
+	}
+
+	/* End System */
+
+	/* Start Top-Scores */
+
+	.top-scores__heading {
+		text-align: left;
+		padding-top: 21.254rem;
+	}
+
+	.top-scores__heading h1 {
+		font-size: 56px;
+	}
+
+	.top-scores__heading p {
+		font-size: 18px;
+	}
+
+	.top-scores__review:nth-child(1) {
+		margin-top: 9.974rem;
+	}
+
+	.top-scores__review:nth-child(2) {
+		margin: 1.873rem 0;
+	}
+
+	.top-scores__review:nth-child(3) {
+		margin-bottom: 9.974rem;
+	}
+
+	.top-scores__profile p:first-child {
+		font-size: 24px;
+	}
+
+	.top-scores__profile p:last-child {
+		font-size: 18px;
+	}
+
+	.top-scores__quote p:first-child {
+		font-size: 18px;
+	}
+
+	.top-scores__quote p:last-child {
+		font-size: 14px;
+		line-height: 19px;
+		color: #ffffff;
+		opacity: 0.5;
+	}
+
+	/* End Top-Scores */
+
+	/* Start Newsletter */
+
+	.newsletter {
+		background-position: 10% 160%;
+		text-align: left;
+	}
+
+	.newsletter h3 {
+		font-size: 24px;
+		padding: 2.5rem 16rem 0 0;
+		background-color: transparent;
+	}
+
+	.newsletter h1 {
+		font-size: 56px;
+		line-height: 75px;
+	}
+
+	.newsletter p {
+		font-size: 18px;
+		background-color: transparent;
+	}
+
+	.newsletter .btn {
+		width: 11rem;
+	}
+
+	/* End Newsletter */
+
+	/* Start Footer */
+
+	.footer .nav-item a {
+		font-size: 11px;
+	}
+
+	.footer__icon {
+		font-size: 16px;
+	}
+
+	.footer hr {
+		margin: 4% 0 2% 8%;
+	}
+
+	.footer p {
+		font-size: 14px;
+	}
+
+	/* End Footer */
+}
+
+/* Resolusi Laptop Sedang */
+@media (min-width: 1199.98px) {
+	/* Start Features */
+
+	.features__timeline {
+		margin-left: -25px;
+	} /* Permulaan membuat sebuah timeline */
+
+	.features__timeline:before {
+		height: 64%;
+	} /* Membuat & memberi panjang garis putih */
+
+	/* End Features */
+
+	/* Start Newsletter */
+
+	.newsletter {
+		background-position: 20% 125%;
+	}
+
+	.newsletter h3 {
+		padding: 3.5rem 23rem 0 0;
+	}
+
+	.newsletter h1 {
+		font-size: 65px;
+	}
+	.newsletter .btn {
+		width: 15rem;
+	}
+
+	/* End Newsletter */
+
+	/* Start Footer */
+
+	.footer hr {
+		width: 84.5% !important;
+		margin: 4% 0 2% 9%;
+	}
+
+	/* End Footer */
+}
+
+/* Resolusi Laptop Besar */
+@media (min-width: 1439.98px) {
+	/* Start Footer */
+
+	.footer hr {
+		width: 82% !important;
+		margin: 4% 0 2% 9%;
+	}
+
+	/* End Footer */
+}
