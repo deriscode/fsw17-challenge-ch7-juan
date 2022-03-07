@@ -1,0 +1,19 @@
+<h1 class="mb-3 text-center">Admin Login</h1>
+<form action="/admin/login" method="POST">
+	<% if (success) { %> <%- include('./successMessage', {message: success[0]}) %> <% } else if (error) { %> <%- include('./errorMessage',
+	{message: error[0]}) %> <% } %>
+
+	<div class="form-floating my-4">
+		<input type="email" class="form-control" id="floatingInput" name="email" placeholder="name@example.com" />
+		<label for="floatingInput">Email address</label>%>
+	</div>
+	<div class="form-floating my-4">
+		<input type="password" class="form-control" id="floatingPassword" name="password" placeholder="Password" />
+		<label for="floatingPassword">Password</label>
+	</div>
+	<div class="btn-group my-4 d-flex justify-content-center">
+		<button type="submit" class="btn-confirm my-2 me-4">Register</button>
+		<a href="/"><button type="button" class="btn-back my-2">Back</button></a>
+	</div>
+</form>
+<p class="sign-loginregist">Don't have an account yet? <a href="/admin/register">Sign Up</a></p>

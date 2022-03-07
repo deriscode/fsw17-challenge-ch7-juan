@@ -13,8 +13,6 @@ const {
 const passport = require("passport");
 
 const { checkPlayerAuthenticated, checkPlayerNotAuthenticated } = require("../middleware/authenticate");
-const res = require("express/lib/response");
-const req = require("express/lib/request");
 
 // Menampilkan Halaman Utama (READ)
 router.get("/", Main);
@@ -43,7 +41,18 @@ router.post(
 	checkPlayerNotAuthenticated,
 	passport.authenticate("local", { failureRedirect: "/login", failureFlash: true }),
 	(req, res) => {
-		res.redirect(`/profile/${req.user.uuid}`);
+		if (req.user.role === "PLAYER") {
+			res.redirect(`/profile/${req.user.uuid}`);
+		} else {
+			req.flash("error", "Anda Tidak Memiliki Akses Untuk Login");
+			const { success, error } = req.flash();
+
+			res.render("login", {
+				headTitle: "Login",
+				success,
+				error,
+			});
+		}
 	}
 );
 

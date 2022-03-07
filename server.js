@@ -46,18 +46,21 @@ app.use(flash());
 app.set("view engine", "ejs");
 app.set("views", "./views");
 
-const playerRouter = require("./routes/playerRouter");
+// Route untuk Admin
+const adminRouter = require("./routes/adminRouter");
+app.use(adminRouter);
 
 // Route untuk Player
+const playerRouter = require("./routes/playerRouter");
 app.use(playerRouter);
 
 // Middleware untuk handle 404 Not Found baik dari halaman maupun data
-// app.use((req, res) => {
-// 	res.status(404).render("error", {
-// 		title: "404 Not Found",
-// 		pageTitle: "404",
-// 	});
-// });
+app.use((req, res, next) => {
+	res.status(404).render("404", {
+		title: "404 Not Found",
+		headTitle: "404",
+	});
+});
 
 // Menyambungkan DB & Localhost
 const PORT = process.env.PORT || 4400;

@@ -1,0 +1,118 @@
+/* Import Font Open Sans */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+
+body {
+	background: radial-gradient(circle, rgba(234, 207, 91, 1) 0%, rgba(247, 185, 79, 1) 100%);
+	font-family: "Open Sans", sans-serif;
+}
+
+a {
+	text-decoration: none;
+}
+
+/* Start Admin Form */
+
+.admin-form {
+	height: 100vh;
+}
+
+.admin-form__column {
+	border: 2px solid #632652;
+}
+
+.admin-form input.form-control {
+	color: #632652;
+	font-weight: bold;
+	border: 1px solid #632652 !important;
+	border-radius: 5px;
+}
+
+.admin-form input.form-control:focus {
+	border-color: #632652 !important;
+	box-shadow: 0.3rem 0.3rem 0 0.1rem rgb(99, 38, 82, 25%) !important;
+	color: #632652;
+	font-weight: bold;
+}
+
+.form-floating label {
+	color: #632652;
+	font-weight: bold;
+}
+
+.btn-confirm,
+.btn-back {
+	min-width: 100px;
+	border: 2px solid #632652;
+	border-radius: 3px;
+	padding: 1rem 0;
+	font-weight: bold;
+	transition: all 0.5s ease-in-out;
+}
+
+.btn-confirm {
+	background-color: #ffab76;
+	color: #fff;
+}
+
+.btn-confirm:hover {
+	background-color: #c4662c;
+}
+
+.btn-back {
+	background-color: #ffeead;
+	color: #632652;
+}
+
+.btn-back:hover {
+	background-color: #d8c05d;
+	color: #fff;
+}
+
+.sign-loginregist {
+	color: #632652;
+}
+
+.sign-loginregist a {
+	color: #548cff;
+}
+
+.sign-loginregist a:hover {
+	color: #7900ff;
+}
+
+/* End Admin Form */
+
+/* Start Notification */
+
+.success-message small {
+	color: #005f28;
+	padding: 0.2rem;
+}
+
+.alert-message {
+	color: #fc0a5f;
+	padding: 0.2rem;
+}
+
+/* End Notification */
+
+/* Start Dashboard */
+
+.bg-navbar {
+	background-color: #632652;
+}
+
+.player-list .row {
+	height: 35rem;
+}
+
+.player-list .card-body {
+	border: 2px solid #632652;
+}
+
+.btn-adminlogout {
+	border: none;
+	background-color: none;
+}
+
+/* End Dashboard */

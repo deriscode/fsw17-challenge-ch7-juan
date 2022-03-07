@@ -1,0 +1,31 @@
+<h1 class="mb-3 text-center">Admin Create</h1>
+<form action="/admin/create" method="POST" class="players-form">
+	<div class="form-floating">
+		<input type="text" class="form-control" id="floatingInput" name="username" placeholder="Username" required />
+		<label for="floatingInput">Username</label>
+	</div>
+	<div class="form-floating my-4">
+		<input type="email" class="form-control" id="floatingInput" name="email" placeholder="name@example.com" required />
+		<label for="floatingInput">Email address</label>%>
+	</div>
+	<div class="form-floating my-4">
+		<input type="password" class="form-control" id="floatingPassword" name="password" placeholder="Password" required />
+		<label for="floatingPassword">Password</label>
+	</div>
+	<div class="form-floating my-4">
+		<input type="number" class="form-control" id="input-age" name="age" placeholder="Age" />
+		<label for="input-age">Age</label>
+	</div>
+	<div class="form-floating my-4">
+		<input type="text" class="form-control" id="input-address" name="address" placeholder="Address" />
+		<label for="input-address">Address</label>
+	</div>
+	<div class="form-floating my-4">
+		<input type="text" class="form-control" id="input-city" name="city" placeholder="City" />
+		<label for="input-city">City</label>
+	</div>
+	<div class="btn-group my-4 d-flex justify-content-center">
+		<button type="submit" class="btn-confirm my-2 me-4">Create</button>
+		<a href="/admin/dashboard"><button type="button" class="btn-back my-2">Back</button></a>
+	</div>
+</form>

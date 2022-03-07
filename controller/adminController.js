@@ -1,29 +1,13 @@
 const { User, Biodata, History } = require("../models");
 const bcrypt = require("bcrypt");
 
-// Controller untuk menampilkan halaman utama
-const Main = (req, res) => {
-	const { success, error } = req.flash();
-	try {
-		res.render("main", {
-			headTitle: "Home",
-			success,
-			error,
-		});
-	} catch (error) {
-		console.log("====================================");
-		console.log(error);
-		console.log("====================================");
-	}
-};
-
 // Controller untuk menampilkan halaman register
 const Register = (req, res) => {
 	try {
 		const { success, error } = req.flash();
 
-		res.render("register", {
-			headTitle: "Register",
+		res.render("adminForm", {
+			headTitle: "Admin Register",
 			success,
 			error,
 		});
@@ -39,13 +23,13 @@ const RegisterFunction = async (req, res) => {
 	try {
 		if (req.body.password1 !== req.body.password2) {
 			req.flash("error", "Password Tidak Sama");
-			res.redirect("/register");
+			res.redirect("/admin/register");
 		} else {
 			const newPlayer = await User.create({
 				username: req.body.username,
 				email: req.body.email,
 				password: req.body.password1,
-				role: "PLAYER",
+				role: "ADMIN",
 			});
 
 			await Biodata.create({
@@ -63,14 +47,14 @@ const RegisterFunction = async (req, res) => {
 			});
 
 			req.flash("success", "Berhasil Registrasi. Silahkan Login");
-			res.redirect("/login");
+			res.redirect("/admin/login");
 		}
 	} catch (error) {
 		req.flash("error", error.message);
 		console.log("====================================");
 		console.log(error);
 		console.log("====================================");
-		res.redirect("/register");
+		res.redirect("/admin/register");
 	}
 };
 
@@ -79,8 +63,8 @@ const Login = (req, res) => {
 	try {
 		const { success, error } = req.flash();
 
-		res.render("login", {
-			headTitle: "Login",
+		res.render("adminForm", {
+			headTitle: "Admin Login",
 			success,
 			error,
 		});
@@ -91,21 +75,25 @@ const Login = (req, res) => {
 	}
 };
 
-// Controller untuk menampilkan halaman profile player
-const Profile = async (req, res) => {
+// Controller untuk menampilkan halaman dashboard
+const Dashboard = async (req, res) => {
 	try {
 		const { success, error } = req.flash();
 
-		const playerSelected = await User.findOne({
+		const playerList = await User.findAndCountAll({
 			where: {
-				uuid: req.params.id,
+				role: "PLAYER",
 			},
 			include: ["biodata", "history"],
 		});
 
-		res.render("profile", {
-			headTitle: "Profile",
-			data: playerSelected,
+		console.log("====================================");
+		console.log(playerList);
+		console.log("====================================");
+
+		res.render("dashboard", {
+			headTitle: "Admin Dashboard",
+			data: playerList.rows,
 			username: req.user ? req.user.username : null,
 			success,
 			error,
@@ -117,8 +105,83 @@ const Profile = async (req, res) => {
 	}
 };
 
-// Controller untuk melakukan update/edit player
-const ProfileUpdateFunction = async (req, res) => {
+// Controller untuk menampilkan halaman create
+const DashboardCreate = (req, res) => {
+	try {
+		const { success, error } = req.flash();
+
+		res.render("adminForm", {
+			headTitle: "Admin Create",
+			success,
+			error,
+		});
+	} catch (error) {
+		console.log("====================================");
+		console.log(error);
+		console.log("====================================");
+	}
+};
+
+// Controller untuk membuat player baru
+const DashboardCreateFunction = async (req, res) => {
+	try {
+		const newPlayer = await User.create({
+			username: req.body.username,
+			email: req.body.email,
+			password: req.body.password,
+			role: "PLAYER",
+		});
+
+		await Biodata.create({
+			age: req.body.age === "" ? null : req.body.age,
+			address: req.body.address,
+			city: req.body.city,
+			user_uuid: newPlayer.uuid,
+		});
+
+		await History.create({
+			win: req.body.win,
+			lose: req.body.lose,
+			draw: req.body.draw,
+			user_uuid: newPlayer.uuid,
+		});
+
+		req.flash("success", "Berhasil Membuat Player Baru");
+		res.redirect("/admin/dashboard");
+	} catch (error) {
+		console.log("====================================");
+		console.log(error);
+		console.log("====================================");
+	}
+};
+
+// Controller untuk menampilkan halaman edit
+const DashboardEdit = async (req, res) => {
+	try {
+		const { success, error } = req.flash();
+
+		const playerSelected = await User.findOne({
+			where: {
+				uuid: req.params.id,
+			},
+			include: ["biodata", "history"],
+		});
+
+		res.render("adminForm", {
+			headTitle: "Admin Edit",
+			data: playerSelected,
+			success,
+			error,
+		});
+	} catch (error) {
+		console.log("====================================");
+		console.log(error);
+		console.log("====================================");
+	}
+};
+
+// Controller untuk melakukan edit
+const DashboardEditFunction = async (req, res) => {
 	const { username, email, password, age, address, city, win, lose, draw } = req.body;
 
 	try {
@@ -156,14 +219,12 @@ const ProfileUpdateFunction = async (req, res) => {
 			});
 
 			req.flash("success", "Update Berhasil");
-			res.redirect(`/profile/${updated.uuid}`);
+			res.redirect("/admin/dashboard");
 		}
 	} catch (error) {
-		req.flash("error", error.message);
 		console.log("====================================");
 		console.log(error);
 		console.log("====================================");
-		res.redirect(`/profile/${updated.uuid}`);
 	}
 };
 
@@ -192,30 +253,32 @@ const DeletePlayerFunction = async (req, res) => {
 			});
 
 			req.flash("success", "Akun Berhasil Dihapus");
-			res.redirect("/");
+			res.redirect("/admin/dashboard");
 		}
 	} catch (error) {
 		req.flash("error", error.message);
 		console.log("====================================");
 		console.log(error);
 		console.log("====================================");
-		res.redirect("/");
+		res.redirect("/admin/dashboard");
 	}
 };
 
 // Controller untuk melakukan logout
 const Logout = (req, res) => {
 	req.logOut();
-	res.redirect("/login");
+	res.redirect("/admin/login");
 };
 
 module.exports = {
-	Main,
 	Register,
 	RegisterFunction,
 	Login,
-	Profile,
-	ProfileUpdateFunction,
+	Dashboard,
+	DashboardCreate,
+	DashboardCreateFunction,
+	DashboardEdit,
+	DashboardEditFunction,
 	DeletePlayerFunction,
 	Logout,
 };
