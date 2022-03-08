@@ -54,6 +54,10 @@ app.use(adminRouter);
 const playerRouter = require("./routes/playerRouter");
 app.use(playerRouter);
 
+// Route untuk MCR Game
+const gameRouter = require("./routes/gameRouter");
+app.use(gameRouter);
+
 // Middleware untuk handle 404 Not Found baik dari halaman maupun data
 app.use((req, res, next) => {
 	res.status(404).render("404", {

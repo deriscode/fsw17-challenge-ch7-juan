@@ -19,6 +19,7 @@ a {
 
 .admin-form__login-regist-create {
 	border: 2px solid #632652;
+	margin: 2rem 0;
 }
 
 .admin-form input.form-control {
@@ -124,6 +125,11 @@ a {
 .btn-adminlogout {
 	border: none;
 	background-color: none;
+}
+
+.dashboard-img {
+	width: 65%;
+	margin-top: 5rem;
 }
 
 .dashboard-pagination .page-link {

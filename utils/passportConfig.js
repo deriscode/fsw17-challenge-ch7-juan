@@ -5,7 +5,7 @@ const bcrypt = require("bcrypt");
 const { User } = require("../models");
 
 const initializePassport = (passport) => {
-	// Fungsi untuk mendefinisikan cara login
+	// Fungsi untuk mendefinisikan cara login user role "PLAYER"
 	const authenticatePlayer = (email, password, done) => {
 		User.findOne({
 			where: {
@@ -31,6 +31,7 @@ const initializePassport = (passport) => {
 			});
 	};
 
+	// Fungsi untuk mendefinisikan cara login user role "ADMIN"
 	const authenticateAdmin = (email, password, done) => {
 		User.findOne({
 			where: {

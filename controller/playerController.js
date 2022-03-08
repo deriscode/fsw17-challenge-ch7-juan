@@ -49,7 +49,7 @@ const RegisterFunction = async (req, res) => {
 			});
 
 			await Biodata.create({
-				age: req.body.age,
+				age: 0,
 				address: req.body.address,
 				city: req.body.city,
 				user_uuid: newPlayer.uuid,

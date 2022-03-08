@@ -143,7 +143,7 @@ const DashboardCreateFunction = async (req, res) => {
 		});
 
 		await Biodata.create({
-			age: req.body.age === "" ? null : req.body.age,
+			age: req.body.age === "" ? 0 : req.body.age,
 			address: req.body.address,
 			city: req.body.city,
 			user_uuid: newPlayer.uuid,
