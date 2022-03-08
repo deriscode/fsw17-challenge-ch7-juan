@@ -40,9 +40,11 @@
 		<div class="container player-list">
 			<% if (success) { %> <%- include('./partial/successMessage', {message: success[0]}) %> <% } else if (error) { %> <%-
 			include('./partial/errorMessage', {message: error[0]}) %> <% } %>
+			
+			<!-- Player-List Card -->
 			<div class="row d-flex justify-content-center justify-content-md-evenly align-items-center">
 				<% if (data.length > 0) { %> <% data.forEach(player => { %>
-				<div class="col-10 col-md-5 col-lg-3">
+				<div class="col-10 col-md-5 col-lg-4 my-3 py-3">
 					<div class="card">
 						<div class="card-body">
 							<h5 class="card-title text-center"><%= player.username %></h5>
@@ -68,6 +70,31 @@
 				<div class="col-10 col-md-5 col-lg-3"><%- include('./partial/dashboardPlaceholder') %></div>
 				<% } %>
 			</div>
+
+			<% if (totalPage > 0) { %>
+			<div class="row py-3">
+				<!-- Pagination-->
+				<nav aria-label="Pagination">
+					<ul class="pagination justify-content-center my-4 dashboard-pagination">
+						<li class="page-item <%= currentPage == 1 ? "disabled" : "" %>">
+							<a class="page-link" href="/admin/dashboard/?page=<%= prevPage %>" tabindex="-1" aria-disabled="true">Prev</a>
+						</li>
+
+						<% for( let index = 1; index < totalPage + 1; index++ ) { %>
+						<li class="page-item <%= index == currentPage ? "active" : "" %>" aria-current="page">
+							<a class="page-link" href="/admin/dashboard?page=<%= index %>"><%= index %></a>
+						</li>
+						<% } %>
+
+						<li class="page-item <%= totalPage == currentPage || totalPage == 0 ? "disabled" : "" %>">
+							<a class="page-link" href="/admin/dashboard?page=<%= nextPage %>">
+							Next
+							</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+			<% } %>
 		</div>
 
 		<%- include('./partial/footer') %>

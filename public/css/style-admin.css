@@ -4,6 +4,7 @@
 body {
 	background: radial-gradient(circle, rgba(234, 207, 91, 1) 0%, rgba(247, 185, 79, 1) 100%);
 	font-family: "Open Sans", sans-serif;
+	color: #632652;
 }
 
 a {
@@ -16,7 +17,7 @@ a {
 	height: 100vh;
 }
 
-.admin-form__column {
+.admin-form__login-regist-create {
 	border: 2px solid #632652;
 }
 
@@ -84,14 +85,28 @@ a {
 
 /* Start Notification */
 
+.success-message {
+	display: flex;
+	justify-content: center;
+}
+
 .success-message small {
 	color: #005f28;
-	padding: 0.2rem;
+	padding: 0.5em;
+	font-size: 1.5rem;
+	margin-top: 1em;
 }
 
 .alert-message {
+	display: flex;
+	justify-content: center;
+}
+
+.alert-message small {
 	color: #fc0a5f;
-	padding: 0.2rem;
+	padding: 0.5em;
+	font-size: 1.5rem;
+	margin-top: 1em;
 }
 
 /* End Notification */
@@ -102,10 +117,6 @@ a {
 	background-color: #632652;
 }
 
-.player-list .row {
-	height: 35rem;
-}
-
 .player-list .card-body {
 	border: 2px solid #632652;
 }
@@ -113,6 +124,15 @@ a {
 .btn-adminlogout {
 	border: none;
 	background-color: none;
+}
+
+.dashboard-pagination .page-link {
+	color: #632652;
+}
+
+.dashboard-pagination li.active .page-link {
+	background-color: #632652;
+	border-color: #632652;
 }
 
 /* End Dashboard */

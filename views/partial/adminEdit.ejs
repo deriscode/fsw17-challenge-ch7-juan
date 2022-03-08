@@ -1,29 +1,55 @@
 <h1 class="mb-3 text-center">Admin Edit</h1>
 <form action="/admin/edit/<%= data.uuid %>" method="POST" class="players-form">
-	<div class="form-floating">
-		<input type="text" class="form-control" id="floatingInput" name="username" placeholder="Username" value="<%= data.username %>" />
-		<label for="floatingInput">Username</label>
+	<div class="row d-flex justify-content-center align-items-center">
+		<div class="col-10 col-md-6">
+			<div class="form-floating">
+				<input type="text" class="form-control" id="floatingInput" name="username" placeholder="Username" value="<%= data.username %>" />
+				<label for="floatingInput">Username</label>
+			</div>
+		</div>
+		<div class="col-10 col-md-6">
+			<div class="form-floating my-4">
+				<input type="email" class="form-control" id="floatingInput" name="email" placeholder="name@example.com" value="<%= data.email %>" />
+				<label for="floatingInput">Email address</label>%>
+			</div>
+		</div>
 	</div>
-	<div class="form-floating my-4">
-		<input type="email" class="form-control" id="floatingInput" name="email" placeholder="name@example.com" value="<%= data.email %>" />
-		<label for="floatingInput">Email address</label>%>
+	<div class="row d-flex justify-content-center align-items-center">
+		<div class="col-10 col-md-6">
+			<div class="form-floating my-4">
+				<input type="password" class="form-control" id="input-password" name="password" placeholder="Password" />
+				<label for="input-password">Password</label>
+			</div>
+		</div>
+		<div class="col-10 col-md-6">
+			<div class="form-floating my-4">
+				<input type="number" class="form-control" id="input-age" name="age" placeholder="Age" value="<%= data.biodata.age %>" />
+				<label for="input-age">Age</label>
+			</div>
+		</div>
 	</div>
-	<div class="form-floating my-4">
-		<input type="password" class="form-control" id="input-password" name="password" placeholder="Password" />
-		<label for="input-password">Password</label>
+	<div class="row d-flex justify-content-center align-items-center">
+		<div class="col-10 col-md-6">
+			<div class="form-floating my-4">
+				<input
+					type="text"
+					class="form-control"
+					id="input-address"
+					name="address"
+					placeholder="Address"
+					value="<%= data.biodata.address %>"
+				/>
+				<label for="input-address">Address</label>
+			</div>
+		</div>
+		<div class="col-10 col-md-6">
+			<div class="form-floating my-4">
+				<input type="text" class="form-control" id="input-city" name="city" placeholder="City" value="<%= data.biodata.city %>" />
+				<label for="input-city">City</label>
+			</div>
+		</div>
 	</div>
-	<div class="form-floating my-4">
-		<input type="number" class="form-control" id="input-age" name="age" placeholder="Age" value="<%= data.biodata.age %>" />
-		<label for="input-age">Age</label>
-	</div>
-	<div class="form-floating my-4">
-		<input type="text" class="form-control" id="input-address" name="address" placeholder="Address" value="<%= data.biodata.address %>" />
-		<label for="input-address">Address</label>
-	</div>
-	<div class="form-floating my-4">
-		<input type="text" class="form-control" id="input-city" name="city" placeholder="City" value="<%= data.biodata.city %>" />
-		<label for="input-city">City</label>
-	</div>
+
 	<div class="form-floating my-4">
 		<input
 			type="number"

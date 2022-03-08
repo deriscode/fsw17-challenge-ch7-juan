@@ -80,11 +80,17 @@ const Dashboard = async (req, res) => {
 	try {
 		const { success, error } = req.flash();
 
+		const page = Number(req.query.page) || 1;
+		const itemPerPage = 6;
+
 		const playerList = await User.findAndCountAll({
 			where: {
 				role: "PLAYER",
 			},
 			include: ["biodata", "history"],
+			order: [["createdAt", "DESC"]],
+			limit: itemPerPage,
+			offset: (page - 1) * itemPerPage,
 		});
 
 		console.log("====================================");
@@ -95,6 +101,10 @@ const Dashboard = async (req, res) => {
 			headTitle: "Admin Dashboard",
 			data: playerList.rows,
 			username: req.user ? req.user.username : null,
+			currentPage: page,
+			totalPage: Math.ceil(playerList.count / itemPerPage),
+			nextPage: page + 1,
+			prevPage: page - 1 == 0 ? 1 : page - 1,
 			success,
 			error,
 		});
