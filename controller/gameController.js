@@ -2,7 +2,6 @@ const { User, History, Biodata, Room } = require("../models");
 const bcrypt = require("bcrypt");
 const errorHandler = require("../utils/error");
 const jwt = require("jsonwebtoken");
-const user = require("../models/user");
 
 // Controller untuk melakukan registrasi
 const Register = async (req, res) => {
@@ -21,10 +20,11 @@ const Register = async (req, res) => {
 				user_uuid: newPlayer.uuid,
 			});
 
-			// Biar bisa login di bagian MVC, karena waktu di-test ada error jika age-nya tidak memiliki nilai
 			await Biodata.create({
+				age: req.body.age === "" ? 0 : req.body.age,
+				address: req.body.address,
+				city: req.body.city,
 				user_uuid: newPlayer.uuid,
-				age: 0,
 			});
 
 			res.json({

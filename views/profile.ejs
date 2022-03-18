@@ -43,75 +43,33 @@
 							<label for="input-password">Password</label>
 						</div>
 						<div class="form-floating my-4">
-							<input
-								type="number"
-								class="form-control"
-								id="input-age"
-								name="age"
-								placeholder="Age"
-								value="<%= data.biodata.age %>"
-								form="updateSubmit"
-							/>
+							<input type="number" class="form-control" id="input-age" name="age" placeholder="Age" value="<%= data.biodata ?
+							data.biodata.age : "" %>" form="updateSubmit" />
 							<label for="input-age">Age</label>
 						</div>
 						<div class="form-floating my-4">
-							<input
-								type="text"
-								class="form-control"
-								id="input-address"
-								name="address"
-								placeholder="Address"
-								value="<%= data.biodata.address %>"
-								form="updateSubmit"
-							/>
+							<input type="text" class="form-control" id="input-address" name="address" placeholder="Address" value="<%= data.biodata ?
+							data.biodata.address : "" %>" form="updateSubmit" />
 							<label for="input-address">Address</label>
 						</div>
 						<div class="form-floating my-4">
-							<input
-								type="text"
-								class="form-control"
-								id="input-city"
-								name="city"
-								placeholder="City"
-								value="<%= data.biodata.city %>"
-								form="updateSubmit"
-							/>
+							<input type="text" class="form-control" id="input-city" name="city" placeholder="City" value="<%= data.biodata ?
+							data.biodata.city : "" %>" form="updateSubmit" />
 							<label for="input-city">City</label>
 						</div>
 						<div class="form-floating my-4">
-							<input
-								type="number"
-								class="form-control"
-								id="input-win"
-								name="win"
-								placeholder="Win"
-								value="<%= data.history.win %>"
-								form="updateSubmit"
-							/>
+							<input type="number" class="form-control" id="input-win" name="win" placeholder="Win" value="<%= data.history ?
+							data.history.win : "" %>" form="updateSubmit" />
 							<label for="input-win">Win</label>
 						</div>
 						<div class="form-floating my-4">
-							<input
-								type="number"
-								class="form-control"
-								id="input-lose"
-								name="lose"
-								placeholder="Lose"
-								value="<%= data.history.lose %>"
-								form="updateSubmit"
-							/>
+							<input type="number" class="form-control" id="input-lose" name="lose" placeholder="Lose" value="<%= data.history ?
+							data.history.lose : "" %>" form="updateSubmit" />
 							<label for="input-lose">Lose</label>
 						</div>
 						<div class="form-floating my-4">
-							<input
-								type="number"
-								class="form-control"
-								id="input-draw"
-								name="draw"
-								placeholder="Draw"
-								value="<%= data.history.draw %>"
-								form="updateSubmit"
-							/>
+							<input type="number" class="form-control" id="input-draw" name="draw" placeholder="Draw" value="<%= data.history ?
+							data.history.draw : "" %>" form="updateSubmit" />
 							<label for="input-draw">Draw</label>
 						</div>
 						<div class="btn-group my-4 d-flex flex-column flex-md-row justify-content-md-center">

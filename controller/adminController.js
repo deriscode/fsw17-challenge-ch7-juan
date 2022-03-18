@@ -1,4 +1,5 @@
-const { User, Biodata, History } = require("../models");
+const { User, Biodata, History, Room, sequelize } = require("../models");
+const { Op } = require("sequelize");
 const bcrypt = require("bcrypt");
 
 // Controller untuk menampilkan halaman register
@@ -240,32 +241,57 @@ const DashboardEditFunction = async (req, res) => {
 
 // Controller untuk menghapus akun player
 const DeletePlayerFunction = async (req, res) => {
+	// inisiasi transaction kalau ada error di-rollback
+	const transaction = await sequelize.transaction();
+
 	try {
 		const playerToDelete = await User.findByPk(req.params.id);
 
 		if (playerToDelete) {
-			await Biodata.destroy({
+			await Room.destroy({
 				where: {
-					user_uuid: req.params.id,
+					[Op.or]: [
+						{
+							player_1_uuid: req.params.id,
+						},
+						{
+							player_2_uuid: req.params.id,
+						},
+					],
 				},
+				transaction,
 			});
 
 			await History.destroy({
 				where: {
 					user_uuid: req.params.id,
 				},
+				transaction,
+			});
+
+			await Biodata.destroy({
+				where: {
+					user_uuid: req.params.id,
+				},
+				transaction,
 			});
 
 			const deleted = await User.destroy({
 				where: {
 					uuid: req.params.id,
 				},
+				transaction,
 			});
+
+			// transaction.commit() memberi tahu api bahwa kita siap
+			// untuk melakukan perubahan sesuai dengan logic di atas
+			await transaction.commit();
 
 			req.flash("success", "Akun Berhasil Dihapus");
 			res.redirect("/admin/dashboard");
 		}
 	} catch (error) {
+		await transaction.rollback(); // untuk mengembalikan data ke state sebelumnya
 		req.flash("error", error.message);
 		console.log("====================================");
 		console.log(error);

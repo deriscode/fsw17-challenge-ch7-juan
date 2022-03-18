@@ -50,12 +50,12 @@
 							<h5 class="card-title text-center"><%= player.username %></h5>
 							<h6 class="card-subtitle mb-2 text-dark text-center"><%= player.email %></h6>
 							<hr />
-							<p class="card-text">Age: <%= player.biodata.age %></p>
-							<p class="card-text">Address: <%= player.biodata.address %></p>
-							<p class="card-text">City: <%= player.biodata.city %></p>
-							<p class="card-text">Win: <%= player.history.win %></p>
-							<p class="card-text">Draw: <%= player.history.draw %></p>
-							<p class="card-text">Lose: <%= player.history.lose %></p>
+							<p class="card-text">Age: <%= player.biodata ? player.biodata.age : "" %></p>
+							<p class="card-text">Address: <%= player.biodata ? player.biodata.address : "" %></p>
+							<p class="card-text">City: <%= player.biodata ? player.biodata.city : "" %></p>
+							<p class="card-text">Win: <%= player.history ? player.history.win : "" %></p>
+							<p class="card-text">Draw: <%= player.history ? player.history.draw : "" %></p>
+							<p class="card-text">Lose: <%= player.history ? player.history.lose : "" %></p>
 
 							<div class="action-group d-flex justify-content-center align-items-center my-3">
 								<a href="/admin/edit/<%= player.uuid %>" class="btn btn-warning me-4"> EDIT </a>
